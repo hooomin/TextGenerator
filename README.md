@@ -7,18 +7,42 @@ ver 0.1 base karaage modify version
 ## 使い方
 文章の自動生成の方法
 
+## 環境
+python3系で動くようにしました。
+Dockerで動かすことも可能です。
+
 ### インストール(git clone)
 
 ~~~~
-$ git clone https://github.com/karaage0703/TextGenerator.git
+$ git clone https://github.com/hooomin/TextGenerator.git
 $ cd TextGenerator
 ~~~~
+
+## Dockerで動かす
 
 ### 事前準備
 まずは、事前準備として、適当な長い文章が入ったテキストデータを用意 ex:`sample txt`
 以下コマンド実行
 ~~~~
-$ python PrepareChain.py sample.txt 
+$ docker run -itd -v $(pwd):/code -w /code --name generator hooomin/docker-mecab python PrepareChain.py sample.txt
+$ docker exec -it generator python PrepareChain.py sample.txt
+~~~~
+
+### 文章の生成
+事前準備を実施した後、以下コマンド実行。
+引数は文章の数を表す。以下は文章数が10のときの例
+
+~~~~
+docker exec -it generator python GenerateText.py 10
+~~~~
+
+## ローカルで動かす
+
+### 事前準備
+まずは、事前準備として、適当な長い文章が入ったテキストデータを用意 ex:`sample txt`
+以下コマンド実行
+~~~~
+$ python PrepareChain.py sample.txt
 ~~~~
 
 ### 文章の生成
@@ -28,7 +52,6 @@ $ python PrepareChain.py sample.txt
 ~~~~
 $ python GenerateText.py 10
 ~~~~
-
 ファイルに出力も可能
 
 ~~~~
