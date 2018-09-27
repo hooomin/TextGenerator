@@ -24,7 +24,7 @@ $ cd TextGenerator
 まずは、事前準備として、適当な長い文章が入ったテキストデータを用意 ex:`sample txt`
 以下コマンド実行
 ~~~~
-$ docker run -itd -v $(pwd):/code -w /code --name generator hooomin/docker-mecab python PrepareChain.py sample.txt
+$ docker run -itd -v $(pwd):/code -w /code --name generator hoomin/mecab-docker
 $ docker exec -it generator python PrepareChain.py sample.txt
 ~~~~
 
@@ -33,7 +33,7 @@ $ docker exec -it generator python PrepareChain.py sample.txt
 引数は文章の数を表す。以下は文章数が10のときの例
 
 ~~~~
-docker exec -it generator python GenerateText.py 10
+$ docker exec -it generator python GenerateText.py 10
 ~~~~
 
 ## ローカルで動かす
