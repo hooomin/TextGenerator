@@ -18,7 +18,7 @@ $ git clone https://github.com/hooomin/TextGenerator.git
 $ cd TextGenerator
 ~~~~
 
-## Dockerで動かす
+## <font color="Red">Dockerで動かす</font>
 
 ### 事前準備
 まずは、事前準備として、適当な長い文章が入ったテキストデータを用意 ex:`sample txt`
@@ -36,7 +36,7 @@ $ docker exec -it generator python PrepareChain.py sample.txt
 $ docker exec -it generator python GenerateText.py 10
 ~~~~
 
-## ローカルで動かす
+## <font color="Red">ローカルで動かす</font>
 
 ### 事前準備
 まずは、事前準備として、適当な長い文章が入ったテキストデータを用意 ex:`sample txt`
